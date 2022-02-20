@@ -2,8 +2,8 @@
 #include <math.h>
 #include <string.h>
 
-double x[] = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9};
-double y[] = {0.91735, 0.8608, 0.81925, 0.7792, 0.71875, 0.6016, 0.37105, -0.056, -0.79505};
+double x[5],y[5];
+
 
 
 #define N (sizeof(y) / sizeof(double))
@@ -21,7 +21,7 @@ int factorial(int n)
 }
 
 
-void difference(void)
+void difference()
 {
     double buf[N];      
     int i, j, k;      
@@ -61,9 +61,28 @@ double newton(double X)
 }
 
 
-int main(void)
+void main()
 {
-    printf("y = %f\n", newton(0.43));    
+	double k;
+	int i;
+	i=0;
+	printf("Enter %d x-values\n",N); 
+	while(i<N)
+	{
+		scanf("%lf",&x[i]);
+		i++;
+	}
+	i=0;
+	printf("Enter %d y-values\n",N); 
+	while(i<N)
+	{
+		scanf("%lf",&y[i]);
+		i++;
+	}
+	printf("Enter x to find y=f(x)\n"); 
+	scanf("%lf",&k);
+    printf("f(%lf) = %lf\n", k,newton(k));    
+	   
     
-    return 0;
+
 }
